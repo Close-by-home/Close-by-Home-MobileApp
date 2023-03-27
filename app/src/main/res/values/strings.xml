@@ -1,0 +1,73 @@
+<resources>
+    tela 1 - HOME LOGIN E HOME
+    <string name="app_name">Close By Home</string>
+    <string name="mudar_senha">Mudar senha</string>
+    <string name="cod_cond">Código do condomínio:</string>
+    <string name="email">E-mail:</string>
+    <string name="login">Login</string>
+    <string name="senha">Senha:</string>
+    <string name="bt_esqueceu_senha">Esqueceu a senha?</string>
+    <string name="nova_senha">Nova senha:</string>
+    <string name="repita_senha">Repita senha:</string>
+    <string name="bt_entrar">Entrar</string>
+
+    NavBar
+    <string name="inicio">Inicio</string>
+    <string name="servicos">Serviços</string>
+    <string name="agenda">Agenda</string>
+    <string name="historico_nav">Histórico</string>
+
+    card prestador de serviço
+    <string name="prestador">Prestador:</string>
+    <string name="contato">Contato:</string>
+    <string name="data">Data:</string>
+
+    tela 2 - HOME PERFIL
+    <string name="bem_vindo">Bem vindo</string>
+    <string name="oque_precisa">Do que você precisa?</string>
+
+    tela 3 - CONTRATAR SERVIÇO
+    <string name="procure_servico">Procure um serviço</string>
+    <string name="selecione_servico">Selecione um serviço</string>
+    <string name="filtro_servico">Filtro por serviço:</string>
+    <string name="calendario_prest">Calendário do prestador</string>
+    <string name="bt_contratar">Contratar</string>
+    <string name="horario">Horaríos:</string>
+
+    tela 4 e 9 - AGENDA PERFIL USUARIO/PRESTADOR
+    <string name="veja_agenda">Veja sua agenda</string>
+    <string name="selecione_dia">Selecione um dia</string>
+    <string name="servicos_enc">Serviços encontrados</string>
+    <string name="servicos_nao_encontrados">Não foi encontrado nenhum serviço para este dia</string>
+
+    tela 5 e 10 - HISTORICO PERFIL USUARIO/PRESTADOR
+    <string name="historico">Histórico</string>
+
+    tela 6 - PERFIL, PERFIL APÓS ATIVAÇÃO (e cod cond e email na tela 1 - HOME)
+    <string name="perfil">Perfil</string>
+    <string name="bloco">Bloco:</string>
+    <string name="apartamento">Apartamento:</string>
+    <string name="numero">Número:</string>
+    <string name="ativar">Ativar conta de serviço</string>
+    <string name="bt_perfil_prest">Perfil de prestador</string>
+    <string name="bt_dash">Dashboard de serviço</string>
+
+    tela 7 - HOME PRESTADOR
+    <string name="servicos_ag">Serviços agendados</string>
+    <string name="prox_servico">Próximo serviço</string>
+    <string name="agendados">Agendados:</string>
+
+    tela 8 - CONFIGURAÇÃO DE SERVIÇO
+    <string name="conf_serv">Configurações do serviço</string>
+    <string name="tipo_serv">Tipo de serviço oferecido </string>
+    <string name="sel_folga">Selecione os dias de folga:</string>
+    <string name="seg">Seg</string>
+    <string name="ter">Ter</string>
+    <string name="qua">Qua</string>
+    <string name="qui">Qui</string>
+    <string name="sex">Sex</string>
+    <string name="sab">Sab</string>
+    <string name="ed_hr">Editar horários</string>
+    <string name="bt_conf_mud">Confirmar mudanças</string>
+
+</resources>
