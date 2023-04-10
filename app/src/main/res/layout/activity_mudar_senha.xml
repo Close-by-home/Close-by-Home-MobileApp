@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".MudarSenha"
     android:orientation="vertical"
     android:background="@drawable/background_login">
 
@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login"
+        android:text="@string/recuperar_senha"
         android:textSize="30sp"
         android:layout_marginBottom="10dp"
         android:layout_gravity="center"
@@ -28,7 +28,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/email"
+        android:text="@string/cod_cond"
         android:textSize="25sp"
         android:layout_marginLeft="50dp"
         />
@@ -43,7 +43,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/senha"
+        android:text="@string/email"
         android:textSize="25sp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="15dp"
@@ -69,7 +69,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/bt_entrar"
+        android:text="@string/mudar_senha"
         android:layout_marginTop="20dp"
         />
+
 </LinearLayout>

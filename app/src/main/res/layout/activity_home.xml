@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_bem_vindo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="@string/bem_vindo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_gravity="start|center"
+            android:fontFamily="@font/opensans_bold"
+            />
+
+        <TextView
+            android:id="@+id/tv_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_bem_vindo"
+            android:layout_centerVertical="true"
+            android:text=" PLACEHOLDER"
+            android:textColor="@color/primary_orange"
+            android:textSize="20sp"
+            android:layout_gravity="start|center"
+            android:fontFamily="@font/opensans_bold"
+            />
+
+        <ImageView
+            android:id="@+id/iv_perfil"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end|center"
+            android:background="@drawable/img_perfil"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
