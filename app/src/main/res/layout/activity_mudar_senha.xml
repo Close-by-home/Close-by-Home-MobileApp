@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MudarSenha"
+    tools:context=".rest.MudarSenha"
     android:orientation="vertical"
     android:background="@drawable/background_login">
 
@@ -34,6 +34,7 @@
         />
 
     <EditText
+        android:id="@+id/etCodigo"
         style="@style/input_forms"
         android:layout_width="match_parent"
         android:layout_height="35dp"
@@ -50,6 +51,7 @@
         />
 
     <EditText
+        android:id="@+id/etEmail"
         style="@style/input_forms"
         android:layout_width="match_parent"
         android:layout_height="35dp"
@@ -71,6 +73,7 @@
         android:layout_gravity="center"
         android:text="@string/mudar_senha"
         android:layout_marginTop="20dp"
+        android:onClick="mudarSenha"
         />
 
 </LinearLayout>

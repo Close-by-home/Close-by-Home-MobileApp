@@ -4,6 +4,7 @@
     <string name="mudar_senha">Mudar senha</string>
     <string name="cod_cond">Código do condomínio:</string>
     <string name="email">E-mail:</string>
+    <string name="cod">Código:</string>
     <string name="login">Login</string>
     <string name="senha">Senha:</string>
     <string name="bt_esqueceu_senha">Esqueceu a senha?</string>
