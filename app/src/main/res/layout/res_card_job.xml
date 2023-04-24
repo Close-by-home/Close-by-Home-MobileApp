@@ -1,6 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingStart="10dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginTop="15dp"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/rlPrestador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivPestador"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/img_perfil" />
+
+        <TextView
+            android:id="@+id/tvPrestador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ivPestador"
+            android:paddingLeft="20dp"
+            android:paddingRight="70dp"
+            android:text="Prestador:"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvNomePrestador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ivPestador"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:text="Julio Cezar"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvContato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ivPestador"
+            android:paddingLeft="20dp"
+            android:paddingTop="40dp"
+            android:text="Contato:"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tvNumContato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ivPestador"
+            android:paddingLeft="20dp"
+            android:paddingTop="60dp"
+            android:text="11 99394-8576"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvContato"
+            android:paddingLeft="90dp"
+            android:paddingTop="40dp"
+            android:text="Data:"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tvInfData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvNumContato"
+            android:paddingLeft="55dp"
+            android:paddingTop="60dp"
+            android:text="02/02/2023"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/tvPrestador"
+            android:background="@color/secondary_orange"
+            android:paddingLeft="15dp"
+            android:text="Diaristo"
+            android:textColor="@color/black" />
+
+        <Button
+            android:layout_width="10dp"
+            android:layout_height="31dp"
+            android:layout_marginLeft="80dp"
+            android:layout_toRightOf="@id/tvContato"
+            android:backgroundTint="@color/primary_orange"
+            android:padding="100dp" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
