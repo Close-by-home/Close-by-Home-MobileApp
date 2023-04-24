@@ -1,16 +1,18 @@
 package com.example.close_by_home.rest
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.close_by_home.R
 import com.example.close_by_home.models.UsuarioLoginDto
+import com.example.close_by_home.services.UsuarioService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import com.example.close_by_home.services.UsuarioService
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var cod: EditText
@@ -62,6 +64,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun logar(view: View) {
         if(camposValidos()){
+            val intent = Intent(this, home::class.java)
             val userInfo = UsuarioLoginDto(
                 codigoCondominio = cod.text.toString(),
                 email = email.text.toString(),
@@ -72,19 +75,27 @@ class MainActivity : AppCompatActivity() {
                 .enqueue(object : Callback<UsuarioLoginDto> {
                     override fun onResponse(call: Call<UsuarioLoginDto>, response: Response<UsuarioLoginDto>) {
                         if (response.isSuccessful) {
-                            print("A requisição funcionou")
-                            Toast.makeText(
-                                baseContext,
-                                "Deu certo",
-                                Toast.LENGTH_LONG
-                            ).show()
+                            print("A requisição funcionou: "+response)
+
+                            if(response.code() == 200){
+                                startActivity(intent);
+                                finish();
+                            }else if(response.code() == 204){
+                                Toast.makeText(
+                                    baseContext,
+                                    "Login incorreto",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }
+
                         } else {
-                            print("A requisição não funcionou $response")
+                            print("A requisição não funcionou corretamente: $response")
                             Toast.makeText(
                                 baseContext,
-                                "Deu erro",
+                                "Ocorreu um erro na requisição",
                                 Toast.LENGTH_LONG
                             ).show()
+                            print(response)
                         }
                     }
 
