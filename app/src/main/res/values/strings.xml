@@ -71,5 +71,9 @@
     <string name="sab">Sab</string>
     <string name="ed_hr">Editar horários</string>
     <string name="bt_conf_mud">Confirmar mudanças</string>
+    <string name="ver_servicos">Veja os seus serviços agendados:</string>
+    <string name="procure_um">Procure um</string>
+    <string name="selecione_um_servico">Selecione um Serviço</string>
+    <string name="filtro_por_servico">Filtro por serviço:</string>
 
 </resources>
