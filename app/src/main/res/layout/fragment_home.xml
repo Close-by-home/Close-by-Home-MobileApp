@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_perfil"
+    tools:context=".fragments.HomeFragment">
+
+    <RelativeLayout
+        android:id="@+id/rl_topoPagina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_bem_vindo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="@string/bem_vindo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_gravity="start|center"
+            android:fontFamily="@font/opensans_bold"
+            />
+
+        <TextView
+            android:id="@+id/tv_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_bem_vindo"
+            android:layout_centerVertical="true"
+            android:text=" PLACEHOLDER"
+            android:textColor="@color/primary_orange"
+            android:textSize="20sp"
+            android:layout_gravity="start|center"
+            android:fontFamily="@font/opensans_bold"
+            />
+
+        <ImageView
+            android:id="@+id/iv_perfil"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end|center"
+            android:background="@drawable/img_perfil"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/ll_logo_container"
+        android:layout_below="@id/rl_topoPagina"
+        android:background="@drawable/fundo_home">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/closebyhomeapp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/oque_precisa"
+        android:id="@+id/tv_oque_precisa"
+        android:layout_below="@id/ll_logo_container"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_oque_precisa"
+        android:id="@+id/sv_icons_trab"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rvIconsServicos"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                tools:itemCount="1"-->
+<!--                tools:listitem="@layout/res_job_item"-->
+<!--                />-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ver_servicos"
+        android:layout_below="@id/sv_icons_trab"
+        android:id="@+id/tv_servicos"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_servicos"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFuncionarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:itemCount="5"
+                tools:listitem="@layout/res_card_job"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

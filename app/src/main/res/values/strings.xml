@@ -53,6 +53,13 @@
     <string name="ativar">Ativar conta de serviço</string>
     <string name="bt_perfil_prest">Perfil de prestador</string>
     <string name="bt_dash">Dashboard de serviço</string>
+    <string name="nome_usuario">Katia da Silva Santana</string>
+    <string name="inf_bloco">A</string>
+    <string name="inf_email">placeholder@gmail.com</string>
+    <string name="inf_ap">301</string>
+    <string name="inf_num">11 989898989</string>
+    <string name="ativar_conta">Ativar conta de serviço</string>
+    <string name="inf_codigo">#GDF32RGF3</string>
 
     tela 7 - HOME PRESTADOR
     <string name="servicos_ag">Serviços agendados</string>
@@ -75,5 +82,7 @@
     <string name="procure_um">Procure um</string>
     <string name="selecione_um_servico">Selecione um Serviço</string>
     <string name="filtro_por_servico">Filtro por serviço:</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="veja_sua">Veja sua</string>
 
 </resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/inicio">
+    <fragment
+        android:id="@+id/inicio"
+        android:name="com.example.close_by_home.fragments.HomeFragment"
+        android:label="fragment_page_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_inicio_to_servico"
+            app:destination="@id/servico" />
+    </fragment>
+    <fragment
+        android:id="@+id/servico"
+        android:name="com.example.close_by_home.fragments.ContratarFragment"
+        android:label="fragment_page_contratar_servico"
+        tools:layout="@layout/fragment_contratar" >
+        <action
+            android:id="@+id/action_servico_to_historicoFragment"
+            app:destination="@id/agenda" />
+    </fragment>
+    <fragment
+        android:id="@+id/agenda"
+        android:name="com.example.close_by_home.fragments.AgendaFragment"
+        android:label="fragment_agenda"
+        tools:layout="@layout/fragment_agenda" >
+        <action
+            android:id="@+id/action_historicoFragment_to_agendaFragment"
+            app:destination="@id/historico" />
+    </fragment>
+    <fragment
+        android:id="@+id/historico"
+        android:name="com.example.close_by_home.fragments.HistoricoFragment"
+        android:label="fragment_historico"
+        tools:layout="@layout/fragment_historico" >
+        <action
+            android:id="@+id/action_agendaFragment_to_inicio"
+            app:destination="@id/inicio" />
+    </fragment>
+</navigation>

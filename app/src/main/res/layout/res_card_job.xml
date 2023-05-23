@@ -41,7 +41,6 @@
             android:layout_toRightOf="@id/ivPestador"
             android:paddingLeft="20dp"
             android:paddingTop="20dp"
-            android:text="Julio Cezar"
             android:textColor="@color/black"
             android:textSize="13sp" />
 
@@ -96,7 +95,7 @@
             android:layout_toRightOf="@+id/tvPrestador"
             android:background="@color/secondary_orange"
             android:paddingLeft="15dp"
-            android:text="Diaristo"
+            android:id="@+id/tvNomeServico"
             android:textColor="@color/black" />
 
         <Button

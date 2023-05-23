@@ -63,51 +63,55 @@ class MainActivity : AppCompatActivity() {
         return valido;
     }
     fun logar(view: View) {
-        if(camposValidos()){
-            val intent = Intent(this, home::class.java)
-            val userInfo = UsuarioLoginDto(
-                codigoCondominio = cod.text.toString(),
-                email = email.text.toString(),
-                senha = senha.text.toString())
-            println(userInfo)
-            retrofit.create(UsuarioService::class.java)
-                .login(userInfo)
-                .enqueue(object : Callback<UsuarioLoginDto> {
-                    override fun onResponse(call: Call<UsuarioLoginDto>, response: Response<UsuarioLoginDto>) {
-                        if (response.isSuccessful) {
-                            print("A requisição funcionou: "+response)
+        val intent = Intent(this, ActivityHome::class.java)
+        startActivity(intent)
+        finish()
 
-                            if(response.code() == 200){
-                                startActivity(intent);
-                                finish();
-                            }else if(response.code() == 204){
-                                Toast.makeText(
-                                    baseContext,
-                                    "Login incorreto",
-                                    Toast.LENGTH_LONG
-                                ).show()
-                            }
-
-                        } else {
-                            print("A requisição não funcionou corretamente: $response")
-                            Toast.makeText(
-                                baseContext,
-                                "Ocorreu um erro na requisição",
-                                Toast.LENGTH_LONG
-                            ).show()
-                            print(response)
-                        }
-                    }
-
-                    override fun onFailure(call: Call<UsuarioLoginDto>, t: Throwable) {
-                        print("ERRO:$t")
-                        Toast.makeText(
-                            baseContext,
-                            t.message,
-                            Toast.LENGTH_LONG
-                        ).show()
-                    }
-                })
-        }
+//        if(camposValidos()){
+//            val intent = Intent(this, ActivityHome::class.java)
+//            val userInfo = UsuarioLoginDto(
+//                codigoCondominio = cod.text.toString(),
+//                email = email.text.toString(),
+//                senha = senha.text.toString())
+//            println(userInfo)
+//            retrofit.create(UsuarioService::class.java)
+//                .login(userInfo)
+//                .enqueue(object : Callback<UsuarioLoginDto> {
+//                    override fun onResponse(call: Call<UsuarioLoginDto>, response: Response<UsuarioLoginDto>) {
+//                        if (response.isSuccessful) {
+//                            print("A requisição funcionou: "+response)
+//
+//                            if(response.code() == 200){
+//                                startActivity(intent);
+//                                finish();
+//                            }else if(response.code() == 204){
+//                                Toast.makeText(
+//                                    baseContext,
+//                                    "Login incorreto",
+//                                    Toast.LENGTH_LONG
+//                                ).show()
+//                            }
+//
+//                        } else {
+//                            print("A requisição não funcionou corretamente: $response")
+//                            Toast.makeText(
+//                                baseContext,
+//                                "Ocorreu um erro na requisição",
+//                                Toast.LENGTH_LONG
+//                            ).show()
+//                            print(response)
+//                        }
+//                    }
+//
+//                    override fun onFailure(call: Call<UsuarioLoginDto>, t: Throwable) {
+//                        print("ERRO:$t")
+//                        Toast.makeText(
+//                            baseContext,
+//                            t.message,
+//                            Toast.LENGTH_LONG
+//                        ).show()
+//                    }
+//                })
+//        }
     }
 }

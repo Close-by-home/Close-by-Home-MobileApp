@@ -1,12 +1,11 @@
-package com.example.close_by_home.rest
+package com.example.close_by_home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.close_by_home.R
 
-class home : AppCompatActivity() {
+class ActivityPerfil : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_perfil)
     }
 }
