@@ -42,9 +42,10 @@ class HomeFragment : Fragment() {
     private fun preencherLista() {
 
         funcionarios.clear()
-        funcionarios.add(Funcionario(1, "aaa", "ssss", 1.0, "https://guides.codepath.com/images/logos/codepath.svg?1684262685"))
-        funcionarios.add(Funcionario(2, "bb b b b b", "padeiro", 1.0, "http://pudim.com.br/pudim.jpg"))
-        funcionarios.add(Funcionario(3, "lady", "cantor", 1.0, "https://stackoverflow.co/img/product/teams/teams-home-hero.svg"))
+        funcionarios.add(Funcionario(1, "Julio Cézar", "Mecânico","https://guides.codepath.com/images/logos/codepath.svg?1684262685", "11968579719"))
+        funcionarios.add(Funcionario(2, "Ana Júlia", "Babá","https://guides.codepath.com/images/logos/codepath.svg?1684262685", "11934951010"))
+        funcionarios.add(Funcionario(3, "Robson Mendes", "Serviços Gerais","https://guides.codepath.com/images/logos/codepath.svg?1684262685", "11940028922"))
+        funcionarios.add(Funcionario(4, " Mendes", "Cuidador cães","https://guides.codepath.com/images/logos/codepath.svg?1684262685", "11940028922"))
 
         funcionarioAdapter.notifyDataSetChanged()
     }
