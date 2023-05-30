@@ -4,9 +4,10 @@ data class Funcionario (
     val id : Int ,
     val nomeUsuario: String,
     val nomeServico: String,
-    val valorMinimo: Double,
+   // val valorMinimo: Double,
     val imagem: String,
-//    val agenda : List<Agenda>,
-//    val data : List<Data>,
+    val contato: String,
+   // val agenda : List<Agenda>,
+    // val data : List<Data>,
 //    val usuario: Usuario,
     ) : java.io.Serializable

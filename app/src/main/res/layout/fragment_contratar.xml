@@ -94,6 +94,16 @@
             android:textSize="15sp"
             android:layout_marginTop="10dp"
             />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFuncionarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:itemCount="5"
+            tools:listitem="@layout/res_card_job"
+            />
+
     </LinearLayout>
 
 </LinearLayout>
