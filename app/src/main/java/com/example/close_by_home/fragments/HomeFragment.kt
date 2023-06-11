@@ -5,17 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.close_by_home.R
 import com.example.close_by_home.adapters.FuncionarioAdapter
+import com.example.close_by_home.adapters.ServicoAdapter
 import com.example.close_by_home.models.Funcionario
+import com.example.close_by_home.models.Servico
 import com.example.close_by_home.models.Usuario
 
 class HomeFragment : Fragment() {
 
+    lateinit var servicoAdapter: ServicoAdapter
     lateinit var funcionarioAdapter: FuncionarioAdapter
 
+    private val servicos = mutableListOf<Servico>()
     private val funcionarios = mutableListOf<Funcionario>()
 
     override fun onCreateView(
@@ -30,13 +35,33 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val colecoes : RecyclerView = view.findViewById(R.id.rvFuncionarios)
+        val pickServico : RecyclerView = view.findViewById(R.id.rvIconsServicos)
+        servicoAdapter = ServicoAdapter(servicos, view.context)
         funcionarioAdapter = FuncionarioAdapter(funcionarios, view.context)
+
+        val servicoLayout = LinearLayoutManager(view.context)
         val layoutManager = LinearLayoutManager(view.context)
 
+        servicoLayout.setOrientation(RecyclerView.HORIZONTAL)
+
+        pickServico.layoutManager = servicoLayout
+        pickServico.adapter = servicoAdapter
         colecoes.layoutManager = layoutManager
         colecoes.adapter = funcionarioAdapter
 
+        preencherServicos()
         preencherLista()
+    }
+
+    private fun preencherServicos() {
+
+        servicos.clear()
+        servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
+        servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
+        servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
+        servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
+        servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
+        servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
     }
 
     private fun preencherLista() {

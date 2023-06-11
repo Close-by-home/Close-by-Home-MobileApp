@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".rest.MudarSenha"
+    tools:context=".rest.MudarSenhaActivity"
     android:orientation="vertical"
     android:background="@drawable/background_login">
 
@@ -38,6 +38,7 @@
         style="@style/input_forms"
         android:layout_width="match_parent"
         android:layout_height="35dp"
+        android:textColor="@color/black"
         android:layout_marginHorizontal="50dp"
         />
 
@@ -55,25 +56,39 @@
         style="@style/input_forms"
         android:layout_width="match_parent"
         android:layout_height="35dp"
+        android:textColor="@color/black"
         android:layout_marginHorizontal="50dp"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/bt_esqueceu_senha"
-        android:layout_gravity="end"
-        android:layout_marginEnd="50dp"
-        />
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        >
 
-    <android.widget.Button
-        style="@style/button_form"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/mudar_senha"
-        android:layout_marginTop="20dp"
-        android:onClick="mudarSenha"
-        />
+        <android.widget.Button
+            android:id="@+id/btnVoltar"
+            style="@style/button_senha"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_gravity="center"
+            android:text="@string/voltar"
+            android:background="@color/primary_blue"
+            />
+
+        <android.widget.Button
+            android:id="@+id/btnMudarSenha"
+            style="@style/button_senha"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/mudar_senha"
+            android:background="@color/primary_orange"
+            />
+
+    </LinearLayout>
 
 </LinearLayout>

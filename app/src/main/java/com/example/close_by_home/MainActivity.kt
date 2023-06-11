@@ -4,14 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.close_by_home.R
-import com.example.close_by_home.models.UsuarioLoginDto
-import com.example.close_by_home.services.UsuarioService
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.close_by_home.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,14 +15,21 @@ class MainActivity : AppCompatActivity() {
     private lateinit var senha: EditText
     private val retrofit = Rest.getInstance();
 
+    private val binding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
+        cod = binding.etCodigo
+        email = binding.etEmail
+        senha = binding.etSenha
 
-        cod = findViewById(R.id.etCodigo)
-        email = findViewById(R.id.etEmail)
-        senha = findViewById(R.id.etSenha)
+        binding.tvMudarSenha.setOnClickListener{
+            irMudarSenha()
+        }
     }
 
     private fun camposValidos(): Boolean {
@@ -63,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         return valido;
     }
     fun logar(view: View) {
-        val intent = Intent(this, ActivityHome::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
         finish()
 
@@ -113,5 +115,11 @@ class MainActivity : AppCompatActivity() {
 //                    }
 //                })
 //        }
+    }
+
+    fun irMudarSenha() {
+        val intent = Intent(this, MudarSenhaActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

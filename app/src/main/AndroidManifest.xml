@@ -16,14 +16,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ActivityPerfil"
+            android:name=".PerfilActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".rest.ActivityHome"
+            android:name=".rest.HomeActivity"
             android:exported="false"
             android:usesCleartextTraffic="true">
             <meta-data
@@ -31,7 +31,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".rest.MudarSenha"
+            android:name=".rest.MudarSenhaActivity"
             android:exported="false"
             android:usesCleartextTraffic="true">
             <meta-data

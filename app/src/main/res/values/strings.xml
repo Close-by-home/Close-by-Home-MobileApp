@@ -84,5 +84,6 @@
     <string name="filtro_por_servico">Filtro por serviço:</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="veja_sua">Veja sua</string>
+    <string name="voltar">Voltar</string>
 
 </resources>

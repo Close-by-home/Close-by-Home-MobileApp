@@ -1,5 +1,6 @@
 package com.example.close_by_home.fragments
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,15 +10,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.close_by_home.R
 import com.example.close_by_home.adapters.FuncionarioAdapter
+import com.example.close_by_home.databinding.ActivityMainBinding
+import com.example.close_by_home.databinding.FragmentAgendaBinding
 import com.example.close_by_home.models.Funcionario
+import com.google.android.material.datepicker.MaterialDatePicker
+import java.util.Calendar
 
-class AgendaFragment : Fragment() {
+class AgendaFragment : Fragment(R.layout.fragment_agenda) {
 
+    private lateinit var binding: FragmentAgendaBinding
     lateinit var funcionarioAdapter: FuncionarioAdapter
 
     private val funcionarios = mutableListOf<Funcionario>()
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,8 +33,7 @@ class AgendaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
+        binding = FragmentAgendaBinding.bind(view)
 
         val colecoes : RecyclerView = view.findViewById(R.id.rvFuncionarios)
         funcionarioAdapter = FuncionarioAdapter(funcionarios, view.context)
@@ -41,6 +44,17 @@ class AgendaFragment : Fragment() {
         colecoes.adapter = funcionarioAdapter
 
         preencherLista()
+    }
+
+    private fun openCalendario() {
+        val diaSelecionado = Calendar.getInstance()
+//        DatePickerDialog(
+//            requireContext(),
+//            this,
+//            diaSelecionado.get(Calendar.YEAR),
+//            diaSelecionado.get(Calendar.MONTH),
+//            diaSelecionado.get(Calendar.DAY_OF_MONTH)
+//        ).show()
     }
 
     private fun preencherLista() {

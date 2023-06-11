@@ -1,7 +1,7 @@
 package com.example.close_by_home.adapters
 
 
-import com.example.close_by_home.R
+import  com.example.close_by_home.R
 
 import android.content.Context
 import android.view.LayoutInflater
