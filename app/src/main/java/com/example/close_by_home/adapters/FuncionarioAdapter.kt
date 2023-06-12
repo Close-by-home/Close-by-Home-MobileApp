@@ -21,7 +21,8 @@ class FuncionarioAdapter (
         class FuncionarioViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             val nome: TextView = itemView.findViewById(R.id.tvNomePrestador)
             val servico: TextView = itemView.findViewById(R.id.tvNomeServico)
-            val imagem: ImageView = itemView.findViewById(R.id.ivPestador)
+            val contato: TextView = itemView.findViewById(R.id.tvNumContato)
+            val data: TextView = itemView.findViewById(R.id.tvInfData)
         }
 
         override fun onCreateViewHolder(
@@ -40,7 +41,8 @@ class FuncionarioAdapter (
             val item = lista.get(position)
             holder.nome.text = item.nomeUsuario
             holder.servico.text = item.nomeServico
-            Picasso.with(context).load(item.imagem).into(holder.imagem);
+            holder.contato.text = item.contato
+            holder.data.text = item.data
         }
 
         override fun getItemCount(): Int {

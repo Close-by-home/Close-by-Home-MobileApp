@@ -21,8 +21,11 @@
             android:id="@+id/ivPestador"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:padding="2dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/img_perfil" />
+            android:src="@drawable/perfil_not_found"
+            android:background="@drawable/img_perfil"
+            />
 
         <TextView
             android:id="@+id/tvPrestador"
@@ -62,7 +65,7 @@
             android:layout_toRightOf="@id/ivPestador"
             android:paddingLeft="20dp"
             android:paddingTop="60dp"
-            android:text="11 99394-8576"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="13sp" />
 
@@ -83,9 +86,10 @@
             android:layout_toRightOf="@id/tvNumContato"
             android:paddingLeft="55dp"
             android:paddingTop="60dp"
-            android:text="02/02/2023"
+            android:text=""
             android:textColor="@color/black"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            />
 
         <TextView
             android:layout_width="100dp"

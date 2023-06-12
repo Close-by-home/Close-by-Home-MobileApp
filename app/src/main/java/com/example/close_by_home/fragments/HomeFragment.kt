@@ -6,14 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.close_by_home.R
 import com.example.close_by_home.adapters.FuncionarioAdapter
 import com.example.close_by_home.adapters.ServicoAdapter
 import com.example.close_by_home.models.Funcionario
+import com.example.close_by_home.models.FuncionarioEndPoint
 import com.example.close_by_home.models.Servico
 import com.example.close_by_home.models.Usuario
+import com.example.close_by_home.rest.Rest
+import com.example.close_by_home.services.FuncionarioService
+import retrofit2.Call
+import retrofit2.Response
+import java.time.LocalDate
+import javax.security.auth.callback.Callback
 
 class HomeFragment : Fragment() {
 
@@ -22,6 +30,7 @@ class HomeFragment : Fragment() {
 
     private val servicos = mutableListOf<Servico>()
     private val funcionarios = mutableListOf<Funcionario>()
+    private val retrofit = Rest.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +59,38 @@ class HomeFragment : Fragment() {
         colecoes.adapter = funcionarioAdapter
 
         preencherServicos()
-        preencherLista()
+//        preencherLista()
+        getFuncionarios()
+    }
+
+    private fun getFuncionarios() {
+        retrofit.create(FuncionarioService::class.java)
+            .getByCodigo("09520000")
+            .enqueue(object: retrofit2.Callback<List<FuncionarioEndPoint>> {
+                override fun onResponse(
+                    call: Call<List<FuncionarioEndPoint>>,
+                    response: Response<List<FuncionarioEndPoint>>
+                ) {
+                    funcionarios.clear()
+                    response.body()!!.iterator()?.forEach {funcionario ->
+                        funcionarios.add(
+                            Funcionario(
+                            1,
+                            funcionario.nomeUsuario,
+                            funcionario.nomeServico,
+                            funcionario.emailUsuario,
+                            LocalDate.now().toString()
+                        ))
+                    }
+                    funcionarioAdapter.notifyDataSetChanged()
+
+//                    Toast.makeText(requireContext(), "foi", Toast.LENGTH_LONG).show()
+                }
+
+                override fun onFailure(call: Call<List<FuncionarioEndPoint>>, t: Throwable) {
+                    Toast.makeText(requireContext(), "não foi", Toast.LENGTH_LONG).show()
+                }
+            })
     }
 
     private fun preencherServicos() {
@@ -62,17 +102,9 @@ class HomeFragment : Fragment() {
         servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
         servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
         servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
-    }
-
-    private fun preencherLista() {
-
-        funcionarios.clear()
-        funcionarios.add(Funcionario(1, "Julio Cézar", "Mecânico","https://guides.codepath.com/images/logos/codepath.svg?1684262685", "11968579719"))
-        funcionarios.add(Funcionario(2, "Ana Júlia", "Babá","https://guides.codepath.com/images/logos/codepath.svg?1684262685", "11934951010"))
-        funcionarios.add(Funcionario(3, "Robson Mendes", "Serviços Gerais","https://guides.codepath.com/images/logos/codepath.svg?1684262685", "11940028922"))
-        funcionarios.add(Funcionario(4, " Mendes", "Cuidador cães","https://guides.codepath.com/images/logos/codepath.svg?1684262685", "11940028922"))
 
         funcionarioAdapter.notifyDataSetChanged()
+
     }
 
 }
