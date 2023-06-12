@@ -90,6 +90,9 @@ class MainActivity : AppCompatActivity() {
                             print("A requisição funcionou: "+response)
 
                             if(response.code() == 200){
+                                intent.putExtra("email", response.body()?.email)
+                                intent.putExtra("senha", response.body()?.senha)
+                                intent.putExtra("codigo", response.body()?.codigoCondominio)
                                 startActivity(intent);
                                 finish();
                             }else if(response.code() == 204){

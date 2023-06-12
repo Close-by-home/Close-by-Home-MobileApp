@@ -12,11 +12,14 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="60dp"
-        android:src="@drawable/img_perfil"
+        android:padding="3dp"
+        android:src="@drawable/perfil_not_found"
+        android:background="@drawable/img_perfil"
         android:layout_gravity="center"
         />
 
     <TextView
+        android:id="@+id/tvNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nome_usuario"
@@ -33,7 +36,6 @@
         android:layout_gravity="center">
 
         <TextView
-            android:id="@+id/tvBloco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bloco"
@@ -60,6 +62,7 @@
         android:layout_gravity="center">
 
         <TextView
+            android:id="@+id/tvBloco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/inf_bloco"
@@ -87,6 +90,7 @@
         />
 
     <TextView
+        android:id="@+id/tvCondigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/inf_codigo"
@@ -104,6 +108,7 @@
         />
 
     <TextView
+        android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/inf_email"
@@ -121,6 +126,7 @@
         />
 
     <TextView
+        android:id="@+id/tvNumero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/inf_num"
@@ -135,6 +141,20 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/ativar_conta"
+        android:layout_marginTop="20dp"
+        android:onClick="ativarConta"
+        />
+
+    <android.widget.Button
+        android:id="@+id/btnVoltar"
+        android:background="@color/primary_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Voltar"
+        android:paddingStart="150dp"
+        android:paddingEnd="150dp"
+        android:textAllCaps="true"
         android:layout_marginTop="20dp"
         android:onClick="ativarConta"
         />

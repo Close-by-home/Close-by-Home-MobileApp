@@ -1,5 +1,7 @@
 package com.example.close_by_home.services
 
+import com.example.close_by_home.models.Funcionario
+import com.example.close_by_home.models.Perfil
 import com.example.close_by_home.models.Usuario
 import com.example.close_by_home.models.UsuarioLoginDto
 import okhttp3.ResponseBody
@@ -18,8 +20,12 @@ interface UsuarioService {
     fun getById(
         @Path("id") id: String
     ): Call<Usuario>
+
     @POST("/usuario/logar")
     fun login(@Body userData: UsuarioLoginDto): Call<UsuarioLoginDto>
+
+    @POST("/usuario/logar")
+    fun pegarUser(@Body userData: UsuarioLoginDto): Call<Perfil >
 
     @POST("/usuario/email-recuperacao-senha/{codigoCondominio}/{email}")
     fun enviarRecuperacaoSenha(

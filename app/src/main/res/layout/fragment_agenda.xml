@@ -44,11 +44,13 @@
             />
 
         <ImageView
-            android:id="@+id/iv_perfil"
+            android:id="@+id/ivPerfil"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentEnd="true"
             android:layout_gravity="end|center"
+            android:padding="2dp"
+            android:src="@drawable/perfil_not_found"
             android:background="@drawable/img_perfil"
             />
 

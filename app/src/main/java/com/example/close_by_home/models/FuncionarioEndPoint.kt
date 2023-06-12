@@ -4,6 +4,6 @@ class FuncionarioEndPoint (
     val nomeServico: String,
     val nomeUsuario: String,
     val emailUsuario: String,
-    val valorMinimo: Int,
+    val telefone: String,
     val cpf: String
     )

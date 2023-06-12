@@ -1,5 +1,6 @@
 package com.example.close_by_home.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,8 +9,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.close_by_home.PerfilActivity
 import com.example.close_by_home.R
 import com.example.close_by_home.adapters.FuncionarioAdapter
+import com.example.close_by_home.databinding.FragmentAgendaBinding
+import com.example.close_by_home.databinding.FragmentContratarBinding
+import com.example.close_by_home.databinding.FragmentHomeBinding
 import com.example.close_by_home.models.Funcionario
 import com.example.close_by_home.models.FuncionarioEndPoint
 import com.example.close_by_home.rest.Rest
@@ -24,6 +29,7 @@ class ContratarFragment : Fragment() {
 
     private val funcionarios = mutableListOf<Funcionario>()
     private val retrofit = Rest.getInstance()
+    private lateinit var binding: FragmentContratarBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +42,10 @@ class ContratarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        binding = FragmentContratarBinding.bind(view)
+        binding.ivPerfil.setOnClickListener(){
+            irParaPerfil()
+        }
 
         val colecoes : RecyclerView = view.findViewById(R.id.rvFuncionarios)
         funcionarioAdapter = FuncionarioAdapter(funcionarios, view.context)
@@ -64,7 +73,7 @@ class ContratarFragment : Fragment() {
                                 1,
                                 funcionario.nomeUsuario,
                                 funcionario.nomeServico,
-                                funcionario.emailUsuario,
+                                funcionario.telefone,
                                 LocalDate.now().toString()
                             ))
                     }
@@ -77,5 +86,11 @@ class ContratarFragment : Fragment() {
                     Toast.makeText(requireContext(), "não foi", Toast.LENGTH_LONG).show()
                 }
             })
+    }
+
+    private fun irParaPerfil() {
+        val intent = Intent(this.requireActivity(), PerfilActivity::class.java)
+        startActivity(intent)
+
     }
 }

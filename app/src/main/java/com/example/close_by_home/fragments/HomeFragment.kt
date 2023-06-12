@@ -1,5 +1,6 @@
 package com.example.close_by_home.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,13 +10,16 @@ import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.close_by_home.PerfilActivity
 import com.example.close_by_home.R
 import com.example.close_by_home.adapters.FuncionarioAdapter
 import com.example.close_by_home.adapters.ServicoAdapter
+import com.example.close_by_home.databinding.FragmentHomeBinding
 import com.example.close_by_home.models.Funcionario
 import com.example.close_by_home.models.FuncionarioEndPoint
 import com.example.close_by_home.models.Servico
 import com.example.close_by_home.models.Usuario
+import com.example.close_by_home.rest.HomeActivity
 import com.example.close_by_home.rest.Rest
 import com.example.close_by_home.services.FuncionarioService
 import retrofit2.Call
@@ -27,6 +31,7 @@ class HomeFragment : Fragment() {
 
     lateinit var servicoAdapter: ServicoAdapter
     lateinit var funcionarioAdapter: FuncionarioAdapter
+    private lateinit var binding: FragmentHomeBinding
 
     private val servicos = mutableListOf<Servico>()
     private val funcionarios = mutableListOf<Funcionario>()
@@ -43,6 +48,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding = FragmentHomeBinding.bind(view)
+
         val colecoes : RecyclerView = view.findViewById(R.id.rvFuncionarios)
         val pickServico : RecyclerView = view.findViewById(R.id.rvIconsServicos)
         servicoAdapter = ServicoAdapter(servicos, view.context)
@@ -57,6 +64,10 @@ class HomeFragment : Fragment() {
         pickServico.adapter = servicoAdapter
         colecoes.layoutManager = layoutManager
         colecoes.adapter = funcionarioAdapter
+
+        binding.ivPerfil.setOnClickListener(){
+            irParaPerfil()
+        }
 
         preencherServicos()
 //        preencherLista()
@@ -78,7 +89,7 @@ class HomeFragment : Fragment() {
                             1,
                             funcionario.nomeUsuario,
                             funcionario.nomeServico,
-                            funcionario.emailUsuario,
+                            funcionario.telefone,
                             LocalDate.now().toString()
                         ))
                     }
@@ -97,13 +108,18 @@ class HomeFragment : Fragment() {
 
         servicos.clear()
         servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
-        servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
-        servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
-        servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
-        servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
-        servicos.add(Servico(R.drawable.ferramenta, "Pedreiro"))
+        servicos.add(Servico(R.drawable.cabeleleiro, "Cabeleleiro"))
+        servicos.add(Servico(R.drawable.jardineiro, "Jardineiro"))
+        servicos.add(Servico(R.drawable.manicure, "Manicure"))
+        servicos.add(Servico(R.drawable.mecanico, "Mecanico"))
 
         funcionarioAdapter.notifyDataSetChanged()
+
+    }
+
+    private fun irParaPerfil() {
+        val intent = Intent(this.requireActivity(), PerfilActivity::class.java)
+        startActivity(intent)
 
     }
 
